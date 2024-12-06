@@ -1,9 +1,21 @@
 import {cutTheList} from "./adnAllFunction.js"
-import {proteinId} from "./adnAllFunction.js"
+import {proteinOf} from "./adnAllFunction.js"
 import { nucleotideList } from "../données/nucleotidesList.js";
-import { makeSequence } from "./adnAllFunction.js";
 
+//Partie A : Protéines 
 
+    //Etape 1 : On découpe 
 
-console.log(makeSequence(cutTheList(25),5))
+        //console.log(cutTheList(3))
+
+    //Etape 2 : on convertit 
+
+        // console.log(proteinOf(cutTheList(3)))
+
+//Partie B : Consensus
+
+    //Etape 1 : On découpe 
+
+        console.log(cutTheList(25))
+
 
