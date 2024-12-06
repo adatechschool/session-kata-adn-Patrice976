@@ -1,22 +1,38 @@
 //récupération dans le code du contenu du fichier avec tout les nucléotides 
-import { nucleotides } from "./nucleotidesList.js";
+import { nucleotideList } from "./nucleotidesList.js";
 
 //tout les trois éléments 
 
-let proteinCode = [nucleotides[0],nucleotides[1],nucleotides[2]]
-
+let proteinCode = []
 
 let nucleotidesArray = []
 
-nucleotidesArray.push(proteinCode)
+let counter = 1
 
-console.log(nucleotidesArray)
+for (let index = 0; index < nucleotideList.length; index++) {
 
-proteinCode = [nucleotides[3],nucleotides[4],nucleotides[5]]
+    //Etape : 1 créer un tableau à 3 injection 
+    console.log("ETAPE 1")
+    console.log("compteur",counter)
 
-nucleotidesArray.push(proteinCode)
+    let nucleotide = nucleotideList[index]
 
-console.log(nucleotidesArray)
+    proteinCode.push(nucleotide)
+
+    console.log(proteinCode)
+
+    if (counter == 3) {
+    // Etape 2: injecter dans un tableau global 
+        console.log("ETAPE 2")
+        nucleotidesArray.push(proteinCode)
+        proteinCode = []
+        counter = 0
+        console.log(nucleotidesArray)
+    }
+    counter = counter + 1 
+}
+
+
 
 
 
