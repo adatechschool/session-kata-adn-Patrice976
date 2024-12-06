@@ -1,1 +1,0 @@
-export let nucleotideList = "CTCTTGAAC"
