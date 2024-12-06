@@ -8,5 +8,8 @@
   },
   "author": "Patrice",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
 }

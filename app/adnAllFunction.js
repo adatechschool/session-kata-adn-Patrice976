@@ -1,10 +1,10 @@
 //récupération dans le code du contenu du fichier avec tout les nucléotides 
-import { nucleotideList } from "./données/nucleotidesList.js";
-import {convertToProtein} from "./données/conversionToProtein.js"
+import { nucleotideList } from "../données/nucleotidesList.js";
+import {convertToProtein} from "../données/conversionToProtein.js"
 
 
                                         // Fonction pour écouper le la liste de nucléotide en tableau de 3 éléments // 
-export function cutTheList() {
+export function cutTheList(nbelement) {
 let proteinCode = [] //tableau pour les 3 nuclotides
 
 let nucleotidesArray = [] //tableau global
@@ -18,7 +18,7 @@ for (let index = 0; index < nucleotideList.length; index++) {
 
     proteinCode.push(nucleotide)
 
-    if (counter == 3) { //condition pour n'injecter que 3 nucléotides 
+    if (counter == nbelement) { //condition pour n'injecter que 3 nucléotides 
     // Etape 2: injecter dans un tableau global 
         nucleotidesArray.push(proteinCode)
         proteinCode = []
@@ -30,8 +30,8 @@ return nucleotidesArray
 }
 
 // fonction pour convertir les associations de nucléotide en une string représentant la protéine 
-export function proteinId() {
-    let nucleotidesArray = cutTheList()
+export function proteinId(nbelement,nbsequence) {
+    let nucleotidesArray = cutTheList(nbelement)
     let protein =''
     for (let index = 0; index < nucleotidesArray.length; index++) {
         const clue = nucleotidesArray[index].join("");
@@ -40,10 +40,5 @@ export function proteinId() {
     }
     return protein
 }
-
-
-
-
-
 
 
