@@ -42,3 +42,31 @@ export function proteinId(nbelement,nbsequence) {
 }
 
 
+export function makeSequence(list,nbelement) {
+    let proteinCode = [] //tableau pour les 5 nuclotides
+    
+    let nucleotidesArray = [] //tableau global
+    
+    let counter = 1 //compteur pour gérer le nombre d'élément à injecter 
+    
+    for (let index = 0; index < list.length; index++) {
+        console.log("tableau",list[index])
+        for (let i =0 ; i < list[index] ; length++) {
+            //Etape : 1 créer un tableau à 5 injection 
+        let nucleotide = list[index][i]
+        console.log("element",nucleotide)
+        
+        proteinCode.push(nucleotide)
+            
+        }
+    
+        if (counter == nbelement) { //condition pour n'injecter que 3 nucléotides 
+        // Etape 2: injecter dans un tableau global 
+            nucleotidesArray.push(proteinCode)
+            proteinCode = []
+            counter = 0
+        }
+        counter = counter + 1 //incrémentation du compteur 
+    }
+    return nucleotidesArray
+    }
